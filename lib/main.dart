@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:receipes/model/recipe.dart';
+
  
 void main() {
   runApp(const RecipeApp());
@@ -14,11 +15,13 @@ class RecipeApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          appBarTheme: const AppBarTheme(centerTitle: true,
+          appBarTheme: const AppBarTheme(
+            centerTitle: true,
+            backgroundColor: Colors.orange,
           ),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Recipe Calculator'),
+      home: const MyHomePage(title: 'ShoeSpace'),
     );
   }
 }
@@ -41,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(title: Text(widget.title)),
       body: SafeArea(child: Container(
 
