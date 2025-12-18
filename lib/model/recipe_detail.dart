@@ -2,7 +2,7 @@ import 'recipe.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// ส่วนที่ 1: RecipeDetail เป็น StatefulWidget
+
 class RecipeDetail extends StatefulWidget {
   final Recipe recipe;
   const RecipeDetail({super.key, required this.recipe});
@@ -21,13 +21,17 @@ class RecipeDetailState extends State<RecipeDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Food Detail'),
+        title: const Text('Uniqlo'),
       ),
       body: Center(
         child: Column(
           children: <Widget>[
-            Image(image: AssetImage(widget.recipe.imageUrl)),
-            const SizedBox(height: 14.0),
+            Image(image: AssetImage(widget.recipe.imageUrl),
+            width: 200,        
+            height: 200,       
+            fit: BoxFit.cover, 
+          ),
+            const SizedBox(height: 10.0),
             Text(
               widget.recipe.imgLabel,
               style: GoogleFonts.kanit(
@@ -62,11 +66,13 @@ class RecipeDetailState extends State<RecipeDetail> {
                 itemCount: widget.recipe.ingredient.length,
                 itemBuilder: (BuildContext context, int index) {
                   final ingredient = widget.recipe.ingredient[index];
-                  int calculatedQuantity = ingredient.quantity * sliderValue;
+                  int calculatedQuantity =  ingredient.quantity * sliderValue ;
+                  int calculatedPrice =  ingredient.price * sliderValue ;
+
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-                    child: Text(
-                      '${calculatedQuantity.toStringAsFixed(0)} ${ingredient.unit} ${ingredient.name}',
+                    child: Text( 
+                      '$calculatedQuantity ชิ้น $calculatedPrice บาท. ${ingredient.name}',
                         style: GoogleFonts.kanit(fontSize: 18.0),
                     ),
                   );

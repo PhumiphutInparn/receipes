@@ -1,64 +1,180 @@
 import 'package:receipes/model/ingredient.dart';
 
 class Recipe {
-  String imgLabel; // Label for the image
-  String imageUrl; 
+  String imgLabel;
+  String imageUrl;
   String description;
-  List<Ingredient>ingredient;
-// Constructor
-  Recipe(this.imageUrl, this.imgLabel , this.description , this.ingredient);
- 
-  static List<Recipe> samples =
-  [
+  List<Ingredient> ingredient;
+
+  Recipe(this.imageUrl, this.imgLabel, this.description, this.ingredient);
+
+  static List<Recipe> samples = [
     Recipe(
-      'assets/images/1.webp',"Pad Thai",'Put juicy king prawns to work in our version of this classic Thai dish, full of vibrant flavours and ready in half an hour.', 
+      'assets/images/01.webp',
+      'เสื้อแจ็กเก็ตชาสเซอร์ผ้าทวีดบูเคล',
+      'Braided chasseur jacket with 3 buttons and braided piping in bouclé tweed',
       [
-       Ingredient(name: 'Rice Noodles', quantity: 200, unit: 'g'),
-        Ingredient(name: 'Shrimp', quantity: 5-6, unit: 'pcs'),
-        Ingredient(name: 'Pad Thai Sauce', quantity: 3, unit: 'tbsp'),
-        
+        Ingredient(
+            name: 'เสื้อแจ็กเก็ตชาสเซอร์ผ้าทวีดบูเคล',
+            quantity: 10,
+            price: 1350),
+      ],
+    ),
+    Recipe(
+      'assets/images/02.webp',
+      'เสื้อผ้าสเวตเตอร์ PEANUTS',
+      'Peanuts การ์ตูนเรื่องสั้นที่มีชื่อเสียงไปทั่วทุกมุมโลก คือผลงานที่ Charles Schulz สร้างสรรค์ขึ้นในปี 1950 หรือเมื่อ 75 ปีก่อน การ์ตูนคอมิกส์นี้ได้รับการแปลเป็น 25 ภาษาและปรากฎอยู่บนหนังสือพิมพ์กว่า 2,600 ใน 75 ประเทศ Peanuts คือเรื่องราวของ Charlie Brown กับสุนัขบีเกิ้ลคู่ใจ Snoopy และผองเพื่อนที่จะนำคุณไปสัมผัสกับเสียงหัวเราะ การผจญภัย และบทเรียนมากมายเกี่ยวกับชีวิตและมิตรภาพ',
+      [
+        Ingredient(name: 'เสื้อ ผ้าสเวต PEANUTS', quantity: 10, price: 990),
+      ],
+    ),
+    Recipe(
+      'assets/images/03.webp',
+      'เสื้อผ้าสเวตเตอร์ PEANUTS',
+      'Peanuts การ์ตูนเรื่องสั้นที่มีชื่อเสียงไปทั่วทุกมุมโลก คือผลงานที่ Charles Schulz สร้างสรรค์ขึ้นในปี 1950 หรือเมื่อ 75 ปีก่อน การ์ตูนคอมิกส์นี้ได้รับการแปลเป็น 25 ภาษาและปรากฎอยู่บนหนังสือพิมพ์กว่า 2,600 ใน 75 ประเทศ Peanuts คือเรื่องราวของ Charlie Brown กับสุนัขบีเกิ้ลคู่ใจ Snoopy และผองเพื่อนที่จะนำคุณไปสัมผัสกับเสียงหัวเราะ การผจญภัย และบทเรียนมากมายเกี่ยวกับชีวิตและมิตรภาพ ©2025 Peanuts Worldwide LLC',
+      [
+        Ingredient(name: 'เสื้อผ้าสเวตเตอร์', quantity: 5, price: 990),
+      ],
+    ),
+    Recipe(
+      'assets/images/04.webp',
+      'เสื้อแจ็คเก็ต Blouson ผ้าเดนิม มีซิป',
+      'ดีไซน์ได้แรงบันดาลใจจากเสื้อผ้าสไตล์เวิร์คแวร์วินเทจในทรงหลวมแบบโมเดิร์น ',
+      [
+        Ingredient(
+            name: 'เสื้อแจ็คเก็ต Blouson ผ้าเดนิม มีซิป',
+            quantity: 1,
+            price: 1490),
+      ],
+    ),
+    Recipe(
+      'assets/images/05.webp',
+      'เสื้อสเวตเตอร์ Extra Fine Merino',
+      'ขนสัตว์เป็นวัสดุธรรมชาติ ดังนั้นเมื่อโดนน้ำหรือความชื้น อาจส่งกลิ่นออกมาได้ คุณอาจได้กลิ่นโดยเฉพาะหลังจากซัก แต่ไม่มีปัญหาเรื่องคุณภาพ และกลิ่นจะหายไปเมื่อแห้ง',
+      [
+        Ingredient(
+            name: 'เสื้อสเวตเตอร์ Extra Fine Merino',
+            quantity: 1,
+            price: 1290),
+      ],
+    ),
+    Recipe(
+      'assets/images/06.webp',
+      'เสื้อเชิ้ต Broadcloth | ปกกระดุม, ลายทาง',
+      'ทรงมาตรฐานตอบโจทย์สำหรับลุคแคชชวลและทางการ',
+      [
+        Ingredient(
+            name: 'เสื้อเชิ้ต Broadcloth | ปกกระดุม, ลายทาง',
+            quantity: 1,
+            price: 990),
+      ],
+    ),
+    Recipe(
+      'assets/images/07.webp',
+      'แว่นตากันแดด ทรง Boston Combination',
+      'ขนาด13.9ซม. x 4.8ซม., เลนส์: 4.9ซม., ความกว้างของแป้นจมูก: 1.9ซม., ความยาวขาแว่น: 14.1ซม.',
+      [
+        Ingredient(
+            name: 'แว่นตากันแดด ทรง Boston Combination',
+            quantity: 1,
+            price: 590),
+      ],
+    ),
+    Recipe(
+      'assets/images/08.webp',
+      'แว่นกันแดด ทรงเหลี่ยม Square',
+      'ขนาด 14.4 x 4.8ซม., เลนส์: 5.0ซม., ความกว้างของแป้นจมูก: 1.9ซม., ความยาวขาแว่น: 14.7ซม.',
+      [
+        Ingredient(
+            name: 'แว่นกันแดด ทรงเหลี่ยม Square',
+            quantity: 1,
+            price: 590),
+      ],
+    ),
+    Recipe(
+      'assets/images/09.webp',
+      'ยีนส์ ทรงหลวม ขา 5 ส่วน',
+      'กระเป๋า: มีกระเป๋า',
+      [
+        Ingredient(
+            name: 'ยีนส์ ทรงหลวม ขา 5 ส่วน',
+            quantity: 1,
+            price: 1290),
+      ],
+    ),
+    Recipe(
+      'assets/images/010.webp',
+      'Kobe VIII Protro',
+      'Kobe VIII Protro ดีไซน์มาเพื่อให้สัมผัสที่ตอบสนองได้ดีที่สุด สานต่อตำนานโดยการคงไว้ทั้งส่วนบนจากตาข่ายออกแบบเชิงโครงสร้างที่โอบรับรูปเท้า และแผ่นยึดเกาะที่ให้ความมั่นคงเป็นพิเศษ VIII Protro พัฒนาดีไซน์จากรุ่นออริจินัลด้วยการเพิ่มโฟม Nike React เพื่อให้การตอบสนองและความทนทานที่มากขึ้น',
+      [
+        Ingredient(
+            name: 'Kobe VIII Protro',
+            quantity: 1,
+            price: 6600),
+      ],
+    ),
+    Recipe(
+      'assets/images/011.webp',
+      'Kobe 9 Elite Low Protro ',
+      'Kobe 9 Elite Low Protro Hyper Grape เกี่ยวเนื่องกับดนตรีและความสามารถของดนตรีในการก้าวข้ามกาลเวลา ทั้งจากศิลปิน เพลง และท่าเต้นที่เป็นอมตะตลอดกาล ส่วนบนรองเท้าสี Cave Purple เป็นการยกย่องดนตรีป๊อป และยังมีลายกราฟิกพื้นผิวพระจันทร์บนพื้นรองเท้าชั้นนอกด้วย รุ่น Protro รังสรรค์ขึ้นเพื่อสัมผัสเหนือชั้นบนคอร์ทและพร้อมโชว์ฟอร์ม ส่วนบนที่ระบายอากาศได้ดีให้ประสิทธิภาพน้ำหนักเบาแบบเน้นๆ พื้นรองเท้าชั้นกลางโฟม React แบบดรอปอินที่ใต้ฝ่าเท้าให้การลดแรงกระแทกที่ตอบสนองได้ดี จึงช่วยให้สัมผัสถึงพื้นคอร์ทได้อยู่เสมอ แผ่นรองคาร์บอนไฟเบอร์ที่พื้นรองเท้าชั้นนอกช่วยให้ความมั่นคงบริเวณข้างเท้าด้านนอกที่แข็งแรงแต่เบา ขณะเดียวกันดอกยางหลายทิศทางและใบมีดยึดเกาะที่ได้รับการอัปเกรดบริเวณด้านในของรองเท้าก็ให้การยึดเกาะแบบที่จำเป็นในการแข่งขัน',
+      [
+        Ingredient(
+            name: 'Kobe 9 Elite Low Protro',
+            quantity: 1,
+            price: 7500),
+      ],
+    ),
+    Recipe(
+      'assets/images/012.webp',
+      'KD18 "Slim Reaper',
+      'ทุกครั้งที่ Slim Reaper ออกล่าคือช่วงเวลาที่แนวรับต้องขวัญผวา เพราะจะกวาด 30 แต้มใส่คู่แข่งแบบไม่ทันตั้งตัว KD18 คู่พิเศษนี้มาพร้อมพื้นรองเท้าชั้นนอกเรืองแสงในที่มืดและดีไซน์โครงกระดูกมือเรียวสุดลึกลับพาดผ่านกรอบกลางเท้า เพื่อสดุดีแก่หนึ่งในนักทำแต้มที่น่าเกรงขามที่สุดในเกม ที่คอยซุ่มล่าแต้มอยู่เสมอ โดยรองเท้ามาพร้อมพื้นรองเท้ายางชั้นนอกที่ทนทานเป็นพิเศษ จึงให้การยึดเกาะที่ดีสำหรับคอร์ทกลางแจ้ง',
+      [
+        Ingredient(
+            name: 'Kobe 9 Elite Low Protro',
+            quantity: 1,
+            price: 6000),
+      ],
+    ),
+    Recipe(
+      'assets/images/013.webp',
+      'Ja 3 Sail',
+      'รองเท้าบาสเก็ตบอลผู้ชาย JA 3 EP รองเท้ากีฬาแบบหุ้มส้นเตี้ย',
+      [
+        Ingredient(
+            name: 'Ja 3 Sail',
+            quantity: 1,
+            price: 4800),
+      ],
+    ),
+    Recipe(
+      'assets/images/014.webp',
+      'Luka .77 "Hčerka"',
+      'รองเท้าบาสเกตบอลชาย',
+      [
+        Ingredient(
+            name: 'Luka .77 "Hčerka"',
+            quantity: 1,
+            price: 6000),
+      ],
+    ),
+    Recipe(
+      'assets/images/015.webp',
+      'Nike G.T. Cut 3 EP',
+      'จะทำคะแนนทิ้งห่างอีกฝ่ายยังไงเมื่อคุณใกล้ชนะแล้ว ก่อนอื่นก็ต้องสวม G.T. Cut 3 คู่นี้ดีไซน์มาเพื่อช่วยสร้างพื้นที่สำหรับการกระโดดชู้ตสเต็ปแบ็คและตัดหลัง การยึดเกาะหนึบบนหลายพื้นคอร์ทช่วยให้หยุดฉับพลันและเปลี่ยนจังหวะเกมได้ตามต้องการ ในขณะที่คุณงัดวิชาพลิกเกมทั้งหลายมาใช้ โฟม ZoomX ที่เพิ่มเข้ามาใหม่และตอบสนองได้ดีสุดๆ ก็จะช่วยให้รู้สึกสดชื่นตลอด 4 ควอเตอร์ รุ่นนี้มาพร้อมพื้นรองเท้ายางชั้นนอกที่ทนทานเป็นพิเศษ จึงให้การยึดเกาะสำหรับคอร์ทกลางแจ้ง',
+      [
+        Ingredient(
+            name: 'Nike G.T. Cut 3 EP',
+            quantity: 1,
+            price: 6900),
       ],
     ),
 
-    Recipe(
-        'assets/images/2.webp' , "Thai pumpkin curry (gaeng fak thong)",'Make the most of seasonal pumpkins or butternut squash in this Thai curry, flavoured with dill, fish sauce and homemade red and green chilli paste.',
-        [
-          Ingredient(name: 'Thai pumpkin (Fak Thong)', quantity: 2, unit: 'cups'),
-          Ingredient(name: 'Red curry paste', quantity: 2, unit: 'tbsp'),
-          Ingredient(name: 'Coconut milk', quantity: 1, unit: 'cup'),
-          Ingredient(name: 'Thai basil leaves', quantity: 2, unit: 'cup'),
-        ],
-      ),
 
 
-     Recipe(
-        'assets/images/3.webp' , "Thai green fish curry", 'Perk up your midweek meal with flaky chunks of fish cooked in creamy coconut milk and mild Thai green curry paste, ready in just 10 minutes.',
-        [
-          Ingredient(name: 'Fish fillets (Tilapia or Snapper)', quantity: 300, unit: 'g'),
-          Ingredient(name: 'Thai green curry paste', quantity: 2, unit: 'tbsp'),
-          Ingredient(name: 'Coconut milk', quantity: 1, unit: 'cups'),
-          Ingredient(name: 'Thai eggplant', quantity: 4-5, unit: 'pcs'),
-          Ingredient(name: 'Sweet basil leaves', quantity: 1, unit: 'cup'),
-          Ingredient(name: 'Fish sauce', quantity: 1, unit: 'tbsp'),
-        ],
-      ),
 
-      
-     Recipe(
-        'assets/images/4.webp' , "Sweet Thai basil smash cocktail" , "Make your own sweet Thai basil smash cocktail, invented by the folk at Rosa's Thai cafe in London. All you need is an egg white, lemon juice, Thai basil, sugar syrup and a lot of booze.",
-        [
-          Ingredient(name: 'Sweet Thai basil leaves', quantity: 8-10, unit: 'leaves'),
-          Ingredient(name: 'Gin or Vodka', quantity: 2, unit: 'oz'),
-          Ingredient(name: 'Fresh lime juice', quantity: 1, unit: 'oz'),
-          Ingredient(name: 'Simple syrup', quantity: 1, unit: 'oz'),
-          Ingredient(name: 'Ice cubes', quantity: 2, unit: 'cups'),
-        ],
-      ),
+
+
+
+
   ];
-
-
-
 }
-
-
-

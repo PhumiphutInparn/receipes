@@ -1,12 +1,12 @@
 class Ingredient{
   String name;
   int quantity;
-  String unit;
+  int price;
 
   Ingredient({
       required this.name,
       required this.quantity,
-      required this.unit
+      required this.price
     }
   );
 
